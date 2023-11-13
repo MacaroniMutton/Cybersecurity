@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script:wght@600&family=Libre+Baskerville&family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Dancing+Script:wght@600&family=Libre+Baskerville&family=Poppins&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -683,7 +683,7 @@
     }
 
     .with-border-image {
-      background: url(./assets/images/cardBackground.jpg) no-repeat center center fixed;
+      background: url(../assets/images/cardBackground.jpg) no-repeat center center fixed;
     }
 
 
@@ -832,7 +832,7 @@
 
 
 p {
- font-family: 'Caveat', cursive;
+ font-family: 'Dancing Script', cursive;
  margin: 15px 10px 10px 30px;
  color: #333;
 }
@@ -1226,7 +1226,7 @@ input#click {
 <body>
   <div class="scene">
     <div class="rocket shake" id="rocket">
-      <img src="./assets/images/rocketship.png">
+      <img src="../assets/images/rocketship.png">
     </div>
     <div class="page hidden">
       <div class="big-text hidden">
@@ -1315,7 +1315,7 @@ input#click {
               <div class="gift">
               <input id='click' type='checkbox'>
               <label class='click' for='click'></label>
-              <div class="wishes" style="color: plum;">Happy Birthday!</div>
+              <div class="wishes" style="color: plum;"><img alt="happi cat" src="../assets/images/happicat.gif" height="100px"></div>
                    <div class="sparkles">
                   <div class="spark1"></div>
                   <div class="spark2"></div>
@@ -1521,6 +1521,26 @@ You are extremely funny and gorgeous and one of the many reasons I enjoy coming 
     },
     {
         id: 20,
+        front: "Soham Daddikar",
+        back: `Happy Birthday Anushka! Hope you enjoy your day and have a great future ahead!`
+    },
+    {
+        id: 21,
+        front: "Arjavi Kakulte",
+        back: `Heeyyylloooo ANTUSHTAAA SHTAANTUNTAA💋💋
+Viiss youhh heppiieee baddeee🎂🥳Enjoy your special day to the fullest!!!!! You’re one of a kind and deserve everything that this special day brings♥️
+And one suggestion for your good health 💪 : DRINK LEMON WATER FOR LIFETIME👀.
+#IYKYK`
+    },
+    {
+        id: 22,
+        front: "Vedant Kamble",
+        back: `🥳Happy Birthday Anushka!! 🥳
+May your day be filled with joy, laughter, and all the wonderful moments you deserve✨. Wishing you a year ahead as amazing as you are.😁
+By the way, thanks for always updating me for those economic vaale lecture ka attendance , photografii ka attendance and and and most importantly giving your assignments for the refference – you're the real source of assignment s! 😄 Cheers to another fantastic year ahead! 🥳`
+    },
+    {
+        id: 23,
         front: "Bonus 👑",
         back: `Text for crad 20`
     }
@@ -1542,13 +1562,13 @@ for (let i = 0; i < cards.length; i++) {
     cardBack.classList.add('card-face', 'back');
     if(i==4) {
         let audioElement = document.createElement('audio');
-        audioElement.src = './assets/audio/bday.wav'; // Replace with the actual path to your audio file
+        audioElement.src = '../assets/audio/bday.wav'; // Replace with the actual path to your audio file
         audioElement.controls = true;
         cardBack.appendChild(audioElement);
     }
-    else if(i==19) {
+    else if(i==22) {
         let videoElement = document.createElement('video');
-        videoElement.src = './assets/video/kween.mp4'; // Replace with the actual path to your video file
+        videoElement.src = '../assets/video/kween.mp4'; // Replace with the actual path to your video file
         videoElement.controls = true;
         videoElement.style.width = '90%'; // Set the width of the video
         videoElement.style.height = '90%'; // Set the height of the video
@@ -1624,7 +1644,7 @@ for (let i = 0; i < cards.length; i++) {
 
       let paragraph2 = document.createElement('p');
       paragraph2.setAttribute('contenteditable', 'true');
-      paragraph2.textContent = 'Over the past few months, every moment shared with you has become a cherished chapter in the story of my life, whether it\'s been filled with happiness, fun, sadness, tension, or even a bit of fear. I wish you all the happiness and joy in the world. Your smile is the most beautiful sight, so keep smiling. Your laughter is infectious, and I adore every shared laugh we\'ve had together. May the universe conspire to make all your birthday wishes come true ❤️. ';
+      paragraph2.textContent = 'Over the past few months, every moment shared with you has become a cherished chapter in the story of my life, whether it\'s been filled with happiness, fun, sadness, tension, or even a bit of fear. I wish you all the happiness and joy in the world. Your smile is the most beautiful sight, so keep smiling. Your laughter is infectious, and I adore every shared laugh we\'ve had together. May the universe conspire to make all your birthday wishes come true ❤️🎉. ';
 
       let nameParagraph = document.createElement('p');
       nameParagraph.classList.add('name');
