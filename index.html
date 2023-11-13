@@ -698,6 +698,10 @@
       transform: rotateY(180deg);
     }
 
+    @media (max-width: 780px) {
+
+    }
+
 .bdaycard-container {
   display: flex;
   justify-content: center;
@@ -993,6 +997,12 @@ input#click {
   left:5px;
 }
 
+@media (max-width: 700px) {
+    body .wishes {
+        font-size: 30px;
+    }
+}
+
 #click:checked ~ .wishes {
   transform: translateY(-100px);
 }
@@ -1206,6 +1216,10 @@ input#click {
     border-right: 0px solid powderblue; 
   }
   }
+  
+  .bdayname {
+    color: #ffb9b7;
+  }
 
 
   </style>
@@ -1217,7 +1231,7 @@ input#click {
     </div>
     <div class="page hidden">
       <div class="big-text hidden">
-        Happy Birthday Anushka!!🎂🥳🍾🎉🥂
+        Happy Birthday <span class="bdayname">Anushka</span>!!🎂🥳🍾🎉🥂
       </div>
       <div class="smol-text hidden">
         Today is your day, so enjoy yourself to the fullest!💃💃💃
@@ -1319,6 +1333,7 @@ input#click {
     </div>
   
   <script>
+    var x = window.matchMedia("(max-width: 700px)");
     function stars() {
       let count = 50;
       let scene = document.querySelector('.scene');
@@ -1523,8 +1538,18 @@ for (let i = 0; i < cards.length; i++) {
     cardBack.classList.add('card-face', 'back');
     cardBack.textContent = cards[i].back; // Use back text from the cards array
     cardBack.style.whiteSpace = 'pre-line';
-    if(i!=0 && i!=9) {
+    if(x.matches) {
+        if(i!=0 && i!=9) {
+            cardBack.style.fontSize = '16px';
+        }
+        else {
+            cardBack.style.fontSize = '12px';
+        }
+    }
+    else {
+        if(i!=0 && i!=9) {
       cardBack.style.fontSize = '24px';
+    }
     }
     if(i==9) {
       cardBack.style.fontFamily = 'Times New Roman, Serif';
