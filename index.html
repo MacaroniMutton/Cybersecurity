@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Libre+Baskerville&family=Poppins&display=swap" rel="stylesheet">
-  
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script:wght@600&family=Libre+Baskerville&family=Poppins&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -684,7 +683,7 @@
     }
 
     .with-border-image {
-      background: url(../assets/images/cardBackground.jpg) no-repeat center center fixed;
+      background: url(./assets/images/cardBackground.jpg) no-repeat center center fixed;
     }
 
 
@@ -833,7 +832,7 @@
 
 
 p {
- font-family: cursive;
+ font-family: 'Caveat', cursive;
  margin: 15px 10px 10px 30px;
  color: #333;
 }
@@ -1227,7 +1226,7 @@ input#click {
 <body>
   <div class="scene">
     <div class="rocket shake" id="rocket">
-      <img src="https://raw.githubusercontent.com/TheSyntaxStudio/public/main/assets/images/rocket.png">
+      <img src="./assets/images/rocketship.png">
     </div>
     <div class="page hidden">
       <div class="big-text hidden">
@@ -1519,6 +1518,11 @@ You are extremely funny and gorgeous and one of the many reasons I enjoy coming 
         id: 19,
         front: "Isha Bamel",
         back: `Happy Birthday Anushka!! Your humor, kindness, and trustworthiness make every moment with you a celebration. Wishing you a day filled with joy and a year ahead brimming with fun and laughter!!!🎊🎂🎂🥳`
+    },
+    {
+        id: 20,
+        front: "Bonus 👑",
+        back: `Text for crad 20`
     }
 ];
 
@@ -1532,11 +1536,28 @@ for (let i = 0; i < cards.length; i++) {
 
     let cardFront = document.createElement('div');
     cardFront.classList.add('card-face', 'front', 'with-border-image');
-    cardFront.textContent = cards[i].front; // Use front text from the cards array
+    cardFront.textContent = cards[i].front;
 
     let cardBack = document.createElement('div');
     cardBack.classList.add('card-face', 'back');
-    cardBack.textContent = cards[i].back; // Use back text from the cards array
+    if(i==4) {
+        let audioElement = document.createElement('audio');
+        audioElement.src = './assets/audio/bday.wav'; // Replace with the actual path to your audio file
+        audioElement.controls = true;
+        cardBack.appendChild(audioElement);
+    }
+    else if(i==19) {
+        let videoElement = document.createElement('video');
+        videoElement.src = './assets/video/kween.mp4'; // Replace with the actual path to your video file
+        videoElement.controls = true;
+        videoElement.style.width = '90%'; // Set the width of the video
+        videoElement.style.height = '90%'; // Set the height of the video
+        cardBack.appendChild(videoElement);
+    }
+    else {
+        cardBack.textContent = cards[i].back;
+    }
+
     cardBack.style.whiteSpace = 'pre-line';
     if(x.matches) {
         if(i!=0 && i!=9) {
@@ -1599,11 +1620,11 @@ for (let i = 0; i < cards.length; i++) {
 
       let paragraph1 = document.createElement('p');
       paragraph1.setAttribute('contenteditable', 'true');
-      paragraph1.textContent = 'Dear best friend,';
+      paragraph1.textContent = 'Dear Anu,';
 
       let paragraph2 = document.createElement('p');
       paragraph2.setAttribute('contenteditable', 'true');
-      paragraph2.textContent = 'jvebiufaiufvhnaiuhnviaozhdtgdgklnhdiurviushbviusbkvbskubviusbgcyugseiucv skjdvbshbfiusiusincksbgfvysiufvhbsdkcnvioushnviusnhzik hbshdkhbiikzuodbgviuosgHappy birthday!! I hope your day is filled with lots of love and laughter! May all of your birthday wishes come true.';
+      paragraph2.textContent = 'Over the past few months, every moment shared with you has become a cherished chapter in the story of my life, whether it\'s been filled with happiness, fun, sadness, tension, or even a bit of fear. I wish you all the happiness and joy in the world. Your smile is the most beautiful sight, so keep smiling. Your laughter is infectious, and I adore every shared laugh we\'ve had together. May the universe conspire to make all your birthday wishes come true ❤️. ';
 
       let nameParagraph = document.createElement('p');
       nameParagraph.classList.add('name');
